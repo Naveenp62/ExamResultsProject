@@ -1,0 +1,25 @@
+<h1>STUDENT DETAILS</h1>
+<hr>
+<body>
+    <table border="1">
+        <thead>
+            <td>RollNo</td>
+            <td>Name</td>
+            <td>Year</td>
+            <td>Subjects</td>
+            <td>Result</td>
+        </thead>
+         {% if result %}
+        <tr>
+            <td>{{ rollno }}</td>
+            <td>{{ name }}</td>
+            <td>{{ year }}</td>
+            <td>{{ subjects }}</td>
+            <td>{{ result }}</td>
+        </tr>
+        {% else %}
+        <h3>No data</h3>
+        {% endif %}
+    </table>
+</body>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <form method="POST">{% csrf_token %}
+        <label for="n1">Roll Number:</label>
+        <input name="num" id="n1" type="text" placeholder="rollnumber" required>
+        <button style="border: 100px;">Submit</button>
+    </form>
+    <br>
+    <br>
+    <table border="1" style="background-color: orange; color: black;">
+    <thead>
+        <td>RollNO</td>
+        <td>Name</td>
+        <td>Year</td>
+        <td>subjects</td>
+        <td>Result</td>
+    </thead>
+    <tr>
+        {% if result %}
+        <td>{{ result.rollno }}</td>
+        <td>{{ result.name }}</td>
+        <td>{{ result.year }}</td>
+        <td>{{ result.subjects }}</td>
+        <td>{{ result.result }}</td>
+    {% else %}
+        <h3> No data Found</h3>
+    {% endif %}
+    </tr>
+    </table>
+</body>
+</html>
